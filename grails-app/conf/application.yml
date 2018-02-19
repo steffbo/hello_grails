@@ -98,6 +98,9 @@ dataSource:
     username: sa
     password: ''
 
+server:
+  port: 4000
+
 environments:
     development:
         dataSource:
