@@ -34,3 +34,17 @@ if (Environment.isDevelopmentMode() && targetDir != null) {
     logger("StackTrace", ERROR, ['FULL_STACKTRACE'], false)
 }
 root(ERROR, ['STDOUT'])
+
+OutputStreamAppender app = new OutputStreamAppender()
+app.setEncoder()
+
+logger("hello_grails", DEBUG, appender("MyAppender", ConsoleAppender) {
+    encoder(PatternLayoutEncoder) {
+        pattern =
+                '%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} ' + // Date
+                        '%clr(%5p) ' + // Log level
+                        '%clr(---){faint} %clr([%15.15t]){faint} ' + // Thread
+                        '%clr(%-40.40logger{39}){cyan} %clr(:){faint} ' + // Logger
+                        '%m%n%wex' // Message
+    }
+})
