@@ -4,7 +4,7 @@ import grails.converters.JSON
 
 class ApiController {
 
-    def myResponse = ['response': 'hello world']
+    def myResponse = [response: 'hello world']
 
     def hello() {
         log.debug("printing ${myResponse} as response")
