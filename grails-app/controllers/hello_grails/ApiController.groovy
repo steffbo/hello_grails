@@ -11,5 +11,6 @@ class ApiController {
         def json = myResponse as JSON
         json.prettyPrint = true
         render json
+        json
     }
 }
