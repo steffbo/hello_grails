@@ -35,9 +35,6 @@ if (Environment.isDevelopmentMode() && targetDir != null) {
 }
 root(ERROR, ['STDOUT'])
 
-OutputStreamAppender app = new OutputStreamAppender()
-app.setEncoder()
-
 logger("hello_grails", DEBUG, appender("MyAppender", ConsoleAppender) {
     encoder(PatternLayoutEncoder) {
         pattern =
